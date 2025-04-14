@@ -43,3 +43,35 @@ object miAsserter {
     }
 
 }
+
+
+object roque {
+	var ave = pepita
+	var cenas = 0;
+	
+  // Configuramos una rutina inicial vacia
+  var rutina = {}
+
+  // Metodo para configurar una rutina x
+  method rutina(_rutina){
+    rutina = _rutina
+  }
+
+	method ave(_ave) {
+		ave = _ave
+		cenas = 0
+	}
+	
+	method alimentar(alimento) {
+		ave.comer(alimento)
+		cenas += 1
+	}
+
+	method cenas(){
+		return cenas
+	}
+
+  method entrenar() {
+    rutina.apply()
+  }
+}

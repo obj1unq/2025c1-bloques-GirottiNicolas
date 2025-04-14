@@ -15,5 +15,40 @@ describe "pepita volar" {
     //Espero que mi asserter diga que está bien que pepita.volar(100) lanza error
     assert.that( miAsserter.assertException( { pepita.volar(1000) } ))
   }
+}
 
+describe "entrenar a pepita"{
+  
+  test "rutina de pepita"{
+    /*
+      Hacer un test que configura una rutina que haga que
+       1 - pepita coma alpiste 
+       2 - pepita vuele 5 
+       3- La energia de pepita luego de que roque la hace entrenar deberia ser 105
+    */
+    const rutinaPepita = {
+                          pepita.comer(alpiste)
+                          pepita.volar(5)
+                        }
+    roque.rutina(rutinaPepita)
+    roque.entrenar()
+    assert.equals(105, pepita.energia())
+  }
+
+  test "rutina de pepita 2 "{
+    /*
+      Hacer un test que configura una rutina que haga que
+       1 - pepita coma alpiste 
+       2 - pepita vuele 5 
+       3- La energia de pepita luego de que roque la hace entrenar deberia ser 105
+    */
+    const rutinaPepita = {
+                          pepita.volar(5)
+                          pepita.comer(alpiste)
+                          pepita.volar(5)
+                        }
+    roque.rutina(rutinaPepita)
+    roque.entrenar()
+    assert.equals(90, pepita.energia())
+  }
 }
