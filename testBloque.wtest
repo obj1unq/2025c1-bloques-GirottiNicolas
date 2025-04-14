@@ -37,15 +37,33 @@ describe "entrenar a pepita"{
 
   test "rutina de pepita 2 "{
     /*
-      Hacer un test que configura una rutina que haga que
-       1 - pepita coma alpiste 
-       2 - pepita vuele 5 
-       3- La energia de pepita luego de que roque la hace entrenar deberia ser 105
+     Hacer otro test que configura una rutina que haga: 
+     1 - pepita vuela 5 
+     2 - pepita come alpiste 
+     3 - pepita vuela 5 La energia de pepita debe ser 90
     */
     const rutinaPepita = {
                           pepita.volar(5)
                           pepita.comer(alpiste)
                           pepita.volar(5)
+                        }
+    roque.rutina(rutinaPepita)
+    roque.entrenar()
+    assert.equals(90, pepita.energia())
+  }
+
+  test "rutina de pepita 3 "{
+    /*
+      Hacer otro test que configura una rutina que haga: 
+      1 - pepita come alpiste 
+      2 - pepita volar 1000 
+      3 - pepita come alpiste
+    */
+    const rutinaPepita = {
+                          pepita.comer(alpiste)
+                          pepita.volar(1000)
+                          pepita.comer(alpiste)
+
                         }
     roque.rutina(rutinaPepita)
     roque.entrenar()
